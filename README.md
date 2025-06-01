@@ -46,4 +46,8 @@ Think of Vikify as Patreon, but with complete on-chain privacy. It’s perfect f
 
 1. Clone the repo:  
    ```bash
-   git clone https://github.com/yourusername/vikify.git
+   git clone https://github.com/Fatumayattani/vikify.git
+
+    cd vikify
+    npm install
+
