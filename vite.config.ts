@@ -23,4 +23,7 @@ export default defineConfig({
 			"node:process": "process",
 		},
 	},
+	optimizeDeps: {
+		exclude: ['socket.io-client']
+	}
 });
