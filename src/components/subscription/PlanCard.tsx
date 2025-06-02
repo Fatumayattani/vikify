@@ -22,7 +22,7 @@ export function PlanCard({ title, description, price, onSubscribe }: PlanCardPro
           className="flex items-center gap-2 px-4 py-2 bg-accent-orange text-primary-black rounded-lg hover:bg-light-orange transition-colors duration-200 font-semibold"
         >
           <FaLock className="w-4 h-4" />
-          Subscribe Anonymously
+          Subscribe
         </button>
       </div>
     </div>
