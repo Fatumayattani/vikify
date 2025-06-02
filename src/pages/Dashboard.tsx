@@ -9,37 +9,37 @@ const SUBSCRIPTION_PLANS = [
     id: 1,
     title: "Basic Newsletter Access",
     description: "Weekly curated content and market insights delivered to your inbox",
-    price: BigInt(5 * 10 ** 6) // 5 USDC
+    price: BigInt(5 * 10 ** 18) // 5 AVAX
   },
   {
     id: 2,
     title: "Premium Discord Group",
     description: "Join our private community with real-time updates and analysis",
-    price: BigInt(10 * 10 ** 6) // 10 USDC
+    price: BigInt(10 * 10 ** 18) // 10 AVAX
   },
   {
     id: 3,
     title: "Expert Research Reports",
     description: "Monthly in-depth research reports on emerging technologies",
-    price: BigInt(20 * 10 ** 6) // 20 USDC
+    price: BigInt(20 * 10 ** 18) // 20 AVAX
   },
   {
     id: 4,
     title: "Virtual Art Gallery Tours",
     description: "Exclusive access to virtual art exhibitions and curator insights",
-    price: BigInt(15 * 10 ** 6) // 15 USDC
+    price: BigInt(15 * 10 ** 18) // 15 AVAX
   },
   {
     id: 5,
     title: "Anonymous Meme Club",
     description: "Join the most exclusive meme creation and sharing community",
-    price: BigInt(8 * 10 ** 6) // 8 USDC
+    price: BigInt(8 * 10 ** 18) // 8 AVAX
   },
   {
     id: 6,
     title: "Anonymous Therapy Sessions",
     description: "Connect with licensed therapists while maintaining complete privacy",
-    price: BigInt(25 * 10 ** 6) // 25 USDC
+    price: BigInt(25 * 10 ** 18) // 25 AVAX
   }
 ];
 
