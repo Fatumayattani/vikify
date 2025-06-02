@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Increase Node.js memory limit to prevent esbuild crashes
+export NODE_OPTIONS="--max-old-space-size=4096"
+
 # Install dependencies
 npm install
 
