@@ -9,19 +9,19 @@ const SUBSCRIPTION_PLANS = [
     id: 1,
     title: "Basic Newsletter Access",
     description: "Weekly curated content and market insights delivered to your inbox",
-    price: BigInt(500) // $5.00
+    price: BigInt(5 * 10 ** 16) // 0.05 AVAX
   },
   {
     id: 2,
     title: "Premium Discord Group",
     description: "Join our private community with real-time updates and analysis",
-    price: BigInt(2000) // $20.00
+    price: BigInt(1 * 10 ** 17) // 0.1 AVAX
   },
   {
     id: 3,
     title: "Expert Research Reports",
     description: "Monthly in-depth research reports on emerging technologies",
-    price: BigInt(5000) // $50.00
+    price: BigInt(2 * 10 ** 17) // 0.2 AVAX
   }
 ];
 
