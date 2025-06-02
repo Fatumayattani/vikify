@@ -25,5 +25,10 @@ export default defineConfig({
 	},
 	optimizeDeps: {
 		exclude: ['socket.io-client']
+	},
+	server: {
+		headers: {
+			'Cross-Origin-Opener-Policy': 'unsafe-none'
+		}
 	}
 });
