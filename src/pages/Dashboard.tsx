@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaLock, FaReceipt, FaHistory, FaShieldAlt } from "react-icons/fa";
-import { useAccount } from "wagmi";
+import { useAccount, useDisconnect } from "wagmi";
 import { PlanCard } from "../components/subscription/PlanCard";
+import { SubscriptionCard } from "../components/subscription/SubscriptionCard";
 import { toast } from "react-toastify";
 
 const SUBSCRIPTION_PLANS = [
@@ -44,8 +45,18 @@ const SUBSCRIPTION_PLANS = [
 ];
 
 export function Dashboard() {
-  const { isConnected } = useAccount();
-  const [activeSubscriptions] = useState([]);
+  const { isConnected, address } = useAccount();
+  const [activeSubscriptions, setActiveSubscriptions] = useState<typeof SUBSCRIPTION_PLANS>([]);
+
+  // Load subscriptions from localStorage on component mount
+  useEffect(() => {
+    if (address) {
+      const savedSubscriptions = localStorage.getItem(`subscriptions_${address}`);
+      if (savedSubscriptions) {
+        setActiveSubscriptions(JSON.parse(savedSubscriptions));
+      }
+    }
+  }, [address]);
 
   const handleSubscribe = async (planId: number) => {
     if (!isConnected) {
@@ -54,7 +65,26 @@ export function Dashboard() {
     }
 
     try {
+      // Find the plan
+      const plan = SUBSCRIPTION_PLANS.find(p => p.id === planId);
+      if (!plan) throw new Error("Plan not found");
+
       // TODO: Implement private transfer
+      
+      // For now, just add to active subscriptions
+      const newSubscription = {
+        ...plan,
+        subscriptionDate: new Date().toISOString()
+      };
+      
+      const updatedSubscriptions = [...activeSubscriptions, newSubscription];
+      setActiveSubscriptions(updatedSubscriptions);
+      
+      // Save to localStorage
+      if (address) {
+        localStorage.setItem(`subscriptions_${address}`, JSON.stringify(updatedSubscriptions));
+      }
+
       toast.success("Subscribed successfully! 🎉");
     } catch (error) {
       console.error(error);
@@ -116,7 +146,12 @@ export function Dashboard() {
           <p className="text-text-dark">No active subscriptions found.</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {/* Active subscription cards will go here */}
+            {activeSubscriptions.map((subscription) => (
+              <SubscriptionCard
+                key={`${subscription.id}-${subscription.subscriptionDate}`}
+                subscription={subscription}
+              />
+            ))}
           </div>
         )}
       </section>
