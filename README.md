@@ -1,4 +1,4 @@
-# Vikify – eERC20: Avalanche's New Privacy Standard
+# Vikify
 
 **Vikify** is a privacy-first subscription platform built on Avalanche using the **eERC20** token standard. It empowers users to pay for digital content like newsletters, communities, and exclusive memberships — **anonymously and securely**, without revealing their identity or payment history.
 
