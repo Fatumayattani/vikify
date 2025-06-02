@@ -15,7 +15,7 @@ export function PlanCard({ title, description, price, onSubscribe }: PlanCardPro
       <p className="text-text-dark mb-4">{description}</p>
       <div className="flex justify-between items-center">
         <span className="text-accent-orange font-mono">
-          {formatDisplayAmount(price, 18)} AVAX
+          {formatDisplayAmount(price, 6)} USDC
         </span>
         <button
           onClick={onSubscribe}
