@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaLock, FaReceipt, FaHistory } from "react-icons/fa";
+import { FaLock, FaReceipt, FaHistory, FaShieldAlt } from "react-icons/fa";
 import { useAccount } from "wagmi";
 import { PlanCard } from "../components/subscription/PlanCard";
 import { toast } from "react-toastify";
@@ -22,6 +22,24 @@ const SUBSCRIPTION_PLANS = [
     title: "Expert Research Reports",
     description: "Monthly in-depth research reports on emerging technologies",
     price: BigInt(2 * 10 ** 17) // 0.2 AVAX
+  },
+  {
+    id: 4,
+    title: "Virtual Art Gallery Tours",
+    description: "Exclusive access to virtual art exhibitions and curator insights",
+    price: BigInt(15 * 10 ** 16) // 0.15 AVAX
+  },
+  {
+    id: 5,
+    title: "Anonymous Meme Club",
+    description: "Join the most exclusive meme creation and sharing community",
+    price: BigInt(8 * 10 ** 16) // 0.08 AVAX
+  },
+  {
+    id: 6,
+    title: "Anonymous Therapy Sessions",
+    description: "Connect with licensed therapists while maintaining complete privacy",
+    price: BigInt(25 * 10 ** 16) // 0.25 AVAX
   }
 ];
 
@@ -46,6 +64,31 @@ export function Dashboard() {
 
   return (
     <div className="space-y-8">
+      {/* Hero Section */}
+      <section className="relative bg-secondary-black rounded-2xl overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
+            alt="Privacy"
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
+        <div className="relative px-8 py-16 flex flex-col items-center text-center space-y-6">
+          <FaShieldAlt className="w-16 h-16 text-accent-orange mb-4" />
+          <h1 className="text-4xl md:text-5xl font-bold text-text-light">
+            Subscribe Anonymously to Premium Content
+          </h1>
+          <p className="text-xl text-text-light/80 max-w-2xl">
+            Your privacy matters. Pay for digital content without revealing your identity.
+            No emails, no usernames—just complete anonymity.
+          </p>
+          <button className="mt-8 px-8 py-3 bg-accent-orange text-primary-black rounded-lg hover:bg-light-orange transition-colors duration-200 font-semibold text-lg flex items-center gap-2">
+            <FaLock className="w-5 h-5" />
+            Get Started
+          </button>
+        </div>
+      </section>
+
       <section className="bg-secondary-black rounded-lg p-6 border border-accent-orange/20">
         <h2 className="text-2xl font-semibold text-text-light mb-4 flex items-center gap-2">
           <FaLock className="text-accent-orange" />
