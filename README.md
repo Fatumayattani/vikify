@@ -4,7 +4,7 @@
 
 ---
 
-## 🔐 What It Does
+## 🔐 What It does
 
 Vikify enables **anonymous, recurring payments** for digital subscriptions, ensuring **on-chain privacy** for both creators and subscribers. With eERC20's **PrivateTransfer** mechanism, payments are encrypted, subscription status is protected, and personal data is never exposed.
 
